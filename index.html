@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>lingfutur</title>
+    <style>
+      #app {
+        transition: 1s;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100%;
+      }
+
+      #future {
+        margin: 400px auto;
+        font-family: Helvetica, Arial;
+        font-size: 72px;
+        color: #ffffff;
+        text-align: center;
+      }
+
+      .pre {
+        background: black;
+        color: white;
+      }
+
+      .post {
+        background: white;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div id="future">Будущеездесь</div>
+    </div>
+    <script>
+      var words = [
+        ['саунд', 'аутист'],
+        ['касич', 'макаров'],
+        ['пост', 'структурализм'],
+        ['постпост', 'звук'],
+        ['DIY', 'osc~'],
+        ['граунд', 'наш'],
+        ['постпостпост', 'phasor~'],
+        ['ritual', 'резистор'],
+        ['мрачный', 'молодой'],
+        ['транс', 'спектр'],
+        ['пере', 'доз'],
+        ['вязкий', 'смерть'],
+        ['радикальный', 'индивидуализм'],
+        ['электро', 'аккустика'],
+        ['спектральный', 'бит'],
+        ['гранулярный', 'синтез']
+      ];
+      var appHolder = document.getElementById('app');
+      var word = document.getElementById('future');
+
+      setInterval(function() {
+        appHolder.style.backgroundColor = getRandomColor();
+      }, 1000);
+      setInterval(function() {
+        word.innerHTML = getFuture();
+      }, 900);
+
+      function getFuture() {
+        var l = words.length;
+        var rPrefix = Math.floor(Math.random()*(l - 1));
+        var rPostfix = Math.floor(Math.random()*(l - 1));
+        var f = '<span class="pre">' + words[rPrefix][0] + '</span>'
+          + '<span class="post">' + words[rPostfix][1] + '</span>';
+        console.log(f);
+        return f;
+      }
+
+      function getRandomColor() {
+        var r = Math.floor(Math.random()*255);
+        var g = Math.floor(Math.random()*255);
+        var b = Math.floor(Math.random()*255);
+
+        var hexR = r.toString(16);
+        var hexG = g.toString(16);
+        var hexB = b.toString(16);
+
+        if (hexR.length === 1) {
+          hexR = '0' + hexR;
+        }
+        if (hexG.length === 1) {
+          hexG = '0' + hexG;
+        }
+        if (hexB.length === 1) {
+          hexB = '0' + hexB;
+        }
+
+        var hexColor = '#' + hexR + hexG + hexB;
+        return hexColor.toUpperCase();
+      }
+    </script>
+  </body>
+</html>
