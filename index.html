@@ -11,10 +11,11 @@
         left: 0;
         width: 100%;
         min-height: 100%;
+        background: black;
       }
 
       #future {
-        margin: 400px auto;
+        margin: 300px auto;
         font-family: Helvetica, Arial;
         font-size: 72px;
         color: #ffffff;
@@ -34,7 +35,8 @@
   </head>
   <body>
     <div id="app">
-      <div id="future">Будущеездесь</div>
+      <div id="future">Будущее здесь!<br>Прескажем его с помощью лингвистической
+        футурологии <big>>:)))))</big></div>
     </div>
     <script>
       var words = [
@@ -53,6 +55,24 @@
         ['радикальный', 'индивидуализм'],
         ['электро', 'аккустика'],
         ['спектральный', 'бит'],
+
+        ['FM', 'моделирование'],
+        ['circuit', 'bending'],
+        ['анархо', 'программирование'],
+        ['дауншифт', 'триоль'],
+
+        ['тотальный', 'субъективизм'],
+        ['прото', 'музыка'],
+        ['lowpass', 'фильтр'],
+        ['downgrade', 'гармоника'],
+        ['прогрессив', 'scape'],
+
+        ['саунд', 'экзистенциализм'],
+        ['пре', 'саунд'],
+        ['электро', 'музей'],
+        ['пространственный', 'галерея'],
+        ['soundartist', 'касич'],
+
         ['гранулярный', 'синтез']
       ];
       var appHolder = document.getElementById('app');
@@ -63,7 +83,7 @@
       }, 1000);
       setInterval(function() {
         word.innerHTML = getFuture();
-      }, 900);
+      }, 200);
 
       function getFuture() {
         var l = words.length;

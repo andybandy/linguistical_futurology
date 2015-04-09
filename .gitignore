@@ -1,3 +1,4 @@
 *.swo
 *.swp
 .divshot-cache
+.DS_Store
